@@ -62,8 +62,33 @@ public class MathController {
 		return ConvertToDouble(numberOne)/ConvertToDouble(numberTwo);
 	}
 	
+	@RequestMapping(value = "/media/{numberOne}/{numberTwo}", method = RequestMethod.GET)
+	public Double media(
+			@PathVariable(value = "numberOne") String numberOne,
+			@PathVariable(value = "numberTwo") String numberTwo)
+	throws Exception{
+		if(!isNumeric(numberOne)||!isNumeric(numberTwo)) {
+			throw new UnsuportedMathOperatorException("Please set a numeric value");
+		}
+		return (ConvertToDouble(numberOne)+ConvertToDouble(numberTwo))/2;
+	}
 	
-	private Double ConvertToDouble(String strNumber) {
+	@RequestMapping(value = "/sqr/{numberOne}", method = RequestMethod.GET)
+	public Double sqr(
+			@PathVariable(value ="numberOne") String numberOne)
+			
+	throws Exception{
+		
+		if(!isNumeric(numberOne)) {
+			throw new UnsuportedMathOperatorException("Please set a numeric value");
+		}
+		return (Math.sqrt((ConvertToDouble(numberOne))));
+	}
+	
+	
+	
+	
+ 	private Double ConvertToDouble(String strNumber) {
 			if (strNumber == null)  return 0D;
 			String number = strNumber.replaceAll(",", ".");
 			

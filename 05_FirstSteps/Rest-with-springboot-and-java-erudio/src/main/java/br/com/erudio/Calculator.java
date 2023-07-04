@@ -1,11 +1,11 @@
 package br.com.erudio;
 
-public class Math {
+public class Calculator {
 	
 	private final long id;
 	private final String content;
 	
-	public Math(long id, String content) {
+	public Calculator(long id, String content) {
 		this.id = id;
 		this.content = content;
 	}

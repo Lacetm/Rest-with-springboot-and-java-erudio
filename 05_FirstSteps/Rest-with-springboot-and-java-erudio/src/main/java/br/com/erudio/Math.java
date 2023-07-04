@@ -1,11 +1,11 @@
 package br.com.erudio;
 
-public class Greeting {
+public class Math {
 	
 	private final long id;
 	private final String content;
 	
-	public Greeting(long id, String content) {
+	public Math(long id, String content) {
 		this.id = id;
 		this.content = content;
 	}
